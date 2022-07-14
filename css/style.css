@@ -255,3 +255,6 @@ h2{
     font-family:'Poppins',Verdana, Geneva, Tahoma, sans-serif;
     color:white;
 }
+.game{
+    opacity:0;
+}

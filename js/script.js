@@ -1,11 +1,10 @@
-window.addEventListener("load",function myFunction(){
-        
+window.addEventListener("load",function myFunction(){     
         let start=Date.now();
         let intr=document.querySelector('#intro');
         let ina=document.querySelector('#hey')
         let s=intr.textContent;
         intr.style.visibility='hidden';
-        ina.style.visibility='hidden';
+        ina.style.animation='slidedown 1s linear'
            let timer=setInterval(function(){
                let timepassed=Date.now()-start;
                if(timepassed>=900){
@@ -13,13 +12,8 @@ window.addEventListener("load",function myFunction(){
                    intr.style.animation='mirrori 2s linear'  
                }
                
-           });
-           ina.style.visiblity='visible'
-                   ina.style.animation='slidedown 1s radial'
-        
+           });    
 });
-
-
 
 function hide(){ 
     let start=Date.now();
@@ -64,4 +58,47 @@ function anim(){
         bc.classList.add('dummy');
     }
     
+}
+function FThrow(){
+    let FirstThrow;
+    let start=Date.now();
+    if(Math.round(Math.random()*100)%6==0){
+        FirstThrow='Snake';
+        let snake=document.getElementById('CSnake');
+        snake.classList.remove('game');
+        let timer=setInterval(function(){
+            let timepassed=Date.now()-start;
+            if(timepassed>=900){
+                snake.classList.add('game');
+            }  
+        });        
+    }
+    else if(Math.round(Math.random()*100)%15==0){
+        FirstThrow='Water';
+        let water=document.getElementById('CWater');
+        water.classList.remove('game');
+        let timer=setInterval(function(){
+            let timepassed=Date.now()-start;
+            if(timepassed>=900){
+                water.classList.add('game');
+            }   
+        });    
+    }
+    else if(Math.round(Math.random()*100)%35==0){
+        FirstThrow='Gun';
+        let gun=document.getElementById('CGun');
+        gun.classList.remove('game');
+        let timer=setInterval(function(){
+            let timepassed=Date.now()-start;
+            if(timepassed>=900){
+                gun.classList.add('game');
+            }
+        });    
+    }   
+}
+
+
+function clickable(){
+    FThrow();
+   
 }
