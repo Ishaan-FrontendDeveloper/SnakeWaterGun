@@ -59,46 +59,41 @@ function anim(){
     }
     
 }
-function FThrow(){
-    let FirstThrow;
-    let start=Date.now();
-    if(Math.round(Math.random()*100)%6==0){
-        FirstThrow='Snake';
-        let snake=document.getElementById('CSnake');
-        snake.classList.remove('game');
-        let timer=setInterval(function(){
-            let timepassed=Date.now()-start;
-            if(timepassed>=900){
-                snake.classList.add('game');
-            }  
-        });        
+
+
+function getUserSelection(userSel){
+    if(document.getElementById('Snake').click){
+        userSel='Snake';
+        return userSel;
     }
-    else if(Math.round(Math.random()*100)%15==0){
-        FirstThrow='Water';
-        let water=document.getElementById('CWater');
-        water.classList.remove('game');
-        let timer=setInterval(function(){
-            let timepassed=Date.now()-start;
-            if(timepassed>=900){
-                water.classList.add('game');
-            }   
-        });    
+    else if(document.getElementById('Water').click){
+        userSel='Water';
+        return userSel;
     }
-    else if(Math.round(Math.random()*100)%35==0){
-        FirstThrow='Gun';
-        let gun=document.getElementById('CGun');
-        gun.classList.remove('game');
-        let timer=setInterval(function(){
-            let timepassed=Date.now()-start;
-            if(timepassed>=900){
-                gun.classList.add('game');
-            }
-        });    
-    }   
+    else if(document.getElementById('Gun').click){
+        userSel='Gun';
+        return userSel;
+    }
 }
-
-
-function clickable(){
-    FThrow();
-   
+function throwC(throwCount){
+    for(let i=0;i<5;i++){
+        return throwCount+1;
+    }
+}
+function ComputerSelection(ComSel,throwCount){
+    if(throwCount==0){
+        if(Math.round(Math.random)*100%2==0){
+            ComSel='Snake';
+        }
+        else if(Math.round(Math.random)*100%2!=0){
+            ComSel='Water';
+        }
+        else if(Math.round(Math.random)*100%3==0||(Math.round(Math.random)*100%5==0){
+            ComSel='Gun';
+        }
+    }
+    else{
+        if()
+    }
+    return ComSel;
 }
